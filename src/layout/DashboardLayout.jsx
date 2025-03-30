@@ -1,6 +1,7 @@
 import React from "react";
 import DashboardNav from "../components/DashboardNav";
 import DashboardSideNav from "../components/DashboardSideNav";
+import { Outlet } from "react-router-dom";
 
 
 const DashboardLayout = () => {
@@ -19,6 +20,7 @@ const DashboardLayout = () => {
           {/* Drawer content */}
           <div>
             <DashboardNav></DashboardNav>
+            <Outlet></Outlet>
           </div>
         </div>
         <div className="drawer-side">
