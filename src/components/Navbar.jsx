@@ -15,6 +15,8 @@ const Navbar = () => {
       <li><NavLink to={"/events"}>Events</NavLink></li>
       <li><NavLink to={"/donate"}>Donate</NavLink></li>
       <li><NavLink to={"/contact"}>Contact</NavLink></li>
+      <li><NavLink to={"/dashboard"}>Dashboard</NavLink></li>
+      <li><NavLink to={"/myProfile"}>My Profile</NavLink></li>
       <li><NavLink to={"/register"}>Register</NavLink></li>
       <li><NavLink to={"/login"}>Log In</NavLink></li>
       <li><NavLink to={"/logout"}>Log out</NavLink></li>
