@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
+
 
 
 const HeroSection = () => {
@@ -113,9 +114,9 @@ const AboutUsSection = () => {
           </div>
   
           <div className="mt-8">
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg mr-4 hover:bg-blue-700">
+            <Link to={"events"}><button className="bg-blue-600 text-white px-6 py-2 rounded-lg mr-4 hover:bg-blue-700">
               View All Events
-            </button>
+            </button></Link>
             <button className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
               Register Now
             </button>
@@ -190,7 +191,6 @@ const Home = () => {
         <UpcomingEvents></UpcomingEvents>
         <OurImpact></OurImpact>
         <JoinUs></JoinUs>
-        <Footer></Footer>
     </div>
   )
 }

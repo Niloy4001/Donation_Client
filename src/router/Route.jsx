@@ -6,6 +6,9 @@ import DashboardLayout from "../layout/DashboardLayout";
 import Login from "../authentication/Login";
 import Register from "../authentication/Register";
 import Home from "../pages/Home";
+import AboutUs from "../pages/AboutUs";
+import Events from "../pages/Events";
+import Contact from "../pages/Contact";
 
 
 const router = createBrowserRouter([
@@ -19,11 +22,11 @@ const router = createBrowserRouter([
         },
         {
             path:"/about",
-            element: <h1>About Us</h1>,
+            element: <AboutUs></AboutUs>,
         },
         {
             path:"/events",
-            element: <h1>Events</h1>,
+            element: <Events></Events>,
         },
         {
             path:"/donate",
@@ -31,7 +34,7 @@ const router = createBrowserRouter([
         },
         {
             path:"/contact",
-            element: <h1>contact</h1>,
+            element: <Contact></Contact>,
         },
         {
             path:"/login",
