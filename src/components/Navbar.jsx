@@ -2,8 +2,14 @@ import React, { useContext } from 'react'
 import {  Link, NavLink } from 'react-router-dom'
 import { AuthContext } from '../context api/AuthProvider'
 
+
 const Navbar = () => {
     const {user , logOut} = useContext(AuthContext)
+    
+    
+  
+    
+    
   return (
     <div>
         <div className="navbar bg-base-100 shadow-sm">

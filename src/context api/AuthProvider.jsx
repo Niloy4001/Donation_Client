@@ -9,6 +9,7 @@ import {
   } from "firebase/auth";
   import React, { createContext, useEffect, useState } from "react";
 import auth from "../authentication/firebase.config";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 
   
@@ -20,7 +21,7 @@ import auth from "../authentication/firebase.config";
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [paymentInfo, setPaymentInfo] = useState({});
-    
+    const axiosPublic = useAxiosPublic();
   
     // login or register by google
     const logInByGoogle = () => {
