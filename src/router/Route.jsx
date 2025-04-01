@@ -9,8 +9,9 @@ import Home from "../pages/Home";
 import AboutUs from "../pages/AboutUs";
 import Events from "../pages/Events";
 import Contact from "../pages/Contact";
-import Donate from "../pages/Donate";
 import StripeProvider from "../payments/StripeProvider";
+import Profile from "../pages/Profile";
+
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         {
             path:"/contact",
             element: <Contact></Contact>,
+        },
+        {
+            path:"/profile",
+            element: <Profile></Profile>,
         },
         {
             path:"/login",

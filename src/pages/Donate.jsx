@@ -18,9 +18,6 @@ const Donate = () => {
   const axiosPublic = useAxiosPublic();
   const {user,loading} = useContext(AuthContext)
 
-  if (loading) {
-    return <Spinner></Spinner>
-  }
 
   const handleSubmit =async () =>{
     if (!stripe || !elements) {
@@ -56,13 +53,15 @@ const Donate = () => {
       if (result.paymentIntent.status === "succeeded") {
         setMessage("🎉 Payment Successful! Thank you for your donation.");
         const {data} = await axiosPublic.post("/payments",{
-          donorEmail: user.email,
-          donorName: user.displayName,
+          donorEmail: user?.email || "Unregisterd User",
+          donorName: user?.displayName || "Anonymous",
           paymentTime: result.paymentIntent.created,
           transactionId: result.paymentIntent.id,
           amount: (result.paymentIntent.amount / 100),
         })
-        toast.success(message)
+        setCustomAmount("")
+        setSelectedAmount(null)
+        toast.success("🎉 Payment Successful! Thank you for your donation.")
         console.log(data);
         
       }

@@ -24,7 +24,7 @@ const Navbar = () => {
       <li><NavLink to={"/donate"}>Donate</NavLink></li>
       <li><NavLink to={"/contact"}>Contact</NavLink></li>
       <li><NavLink to={"/dashboard"}>Dashboard</NavLink></li>
-      <li><NavLink to={"/myProfile"}>My Profile</NavLink></li>
+      <li><NavLink to={"/profile"}>My Profile</NavLink></li>
       {
         user ? 
         <><li><button onClick={()=>logOut()}>Log out</button></li></> 
