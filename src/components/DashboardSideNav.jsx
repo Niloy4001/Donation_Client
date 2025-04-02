@@ -32,7 +32,7 @@ const DashboardSideNav = () => {
     }
         
     {
-        role === "User" &&
+        role === "Donor" &&
         <>
             <li><NavLink to={"/dashboard/myDonations"}> My Donations</NavLink></li>
             <li><NavLink to={"/dashboard/donateNow"}>Donate Now</NavLink></li>

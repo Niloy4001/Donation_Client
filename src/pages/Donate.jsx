@@ -55,7 +55,7 @@ const Donate = () => {
         const {data} = await axiosPublic.post("/payments",{
           donorEmail: user?.email || "Unregisterd User",
           donorName: user?.displayName || "Anonymous",
-          paymentTime: result.paymentIntent.created,
+          paymentTime: Date.now(),
           transactionId: result.paymentIntent.id,
           amount: (result.paymentIntent.amount / 100),
         })

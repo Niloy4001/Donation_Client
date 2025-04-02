@@ -11,6 +11,8 @@ import Events from "../pages/Events";
 import Contact from "../pages/Contact";
 import StripeProvider from "../payments/StripeProvider";
 import Profile from "../pages/Profile";
+import Donations from "../pages/AdminPanel/Donations";
+import MyDonations from "../pages/DonorPanel/MyDonations";
 
 
 
@@ -75,7 +77,7 @@ const router = createBrowserRouter([
             },
             {
                 path:"/dashboard/donations",
-                element: <h1>Donation</h1>
+                element: <Donations></Donations>
             },
             {
                 path:"/dashboard/reportAndAnalytics",
@@ -95,15 +97,15 @@ const router = createBrowserRouter([
             },
             {
                 path:"/dashboard/myDonations",
-                element: <h1>My donations</h1>
+                element: <MyDonations></MyDonations>
             },
             {
                 path:"/dashboard/donateNow",
-                element: <h1>Donate Now</h1>
+                element: <StripeProvider></StripeProvider>
             },
             {
                 path:"/dashboard/transactionHistory",
-                element: <h1>Transaction History</h1>
+                element:<Donations></Donations>
             },
         ]
     },
