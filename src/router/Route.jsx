@@ -13,6 +13,8 @@ import StripeProvider from "../payments/StripeProvider";
 import Profile from "../pages/Profile";
 import Donations from "../pages/AdminPanel/Donations";
 import MyDonations from "../pages/DonorPanel/MyDonations";
+import AvailableEvents from "../pages/VolunteerPanel/AvailableEvents";
+import MyAssignedEvent from "../pages/VolunteerPanel/MyAssignedEvent";
 
 
 
@@ -85,11 +87,11 @@ const router = createBrowserRouter([
             },
             {
                 path:"/dashboard/avaiableEvents",
-                element: <h1>Available Events</h1>
+                element: <AvailableEvents></AvailableEvents>
             },
             {
                 path:"/dashboard/myAssignedEvents",
-                element: <h1>My Assigned Events</h1>
+                element: <MyAssignedEvent></MyAssignedEvent>
             },
             {
                 path:"/dashboard/progressReports",
