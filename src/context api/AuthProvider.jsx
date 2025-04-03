@@ -59,7 +59,7 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
           const user = {
             name: currentUser.displayName || "Anonymous User",
             email: currentUser.email,
-            role: "User",
+            role: "Donor",
           };
           const userInfo = { email: currentUser.email };
           axiosPublic.post("/user", user);

@@ -32,7 +32,7 @@ const Events = () => {
   
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {
-                events.map(event=> 
+                events?.map(event=> 
                   <div key={event._id} className="bg-white p-6 rounded-xl shadow-lg">
                     <h3 className="text-xl font-semibold text-green-600">{event.title}</h3>
                     <p className="text-gray-600">{moment(event.date).format("MMM Do")} | {event.location}</p>

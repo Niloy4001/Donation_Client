@@ -20,6 +20,7 @@ import Overview from "../pages/AdminPanel/Overview";
 import EventManagement from "../pages/AdminPanel/EventManagement";
 import EventListUpdate from "../pages/AdminPanel/EventListUpdate";
 import axios from "axios";
+import ManageUsers from "../pages/AdminPanel/ManageUsers";
 
 
 
@@ -72,7 +73,7 @@ const router = createBrowserRouter([
             },
             {
                 path:"/dashboard/manageUsers",
-                element: <h1>Mangage Users</h1>
+                element: <ManageUsers></ManageUsers>
             },
             {
                 path:"/dashboard/eventMangement",
