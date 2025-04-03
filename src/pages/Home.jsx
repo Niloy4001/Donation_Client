@@ -17,9 +17,9 @@ const HeroSection = () => {
             <button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
               ✩ Join as a Volunteer
             </button>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+            <Link to={"/donate"} className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
               ✩ Donate Now
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -156,27 +156,7 @@ const AboutUsSection = () => {
       </section>
     );
   };
-  const JoinUs = () => {
-    return (
-      <section className="bg-yellow-100 py-16 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-yellow-700 mb-4">🤝 Join Us & Make a Difference!</h2>
-          <p className="text-gray-700 text-lg mb-8">
-            Become a volunteer or support our mission by making a donation. Your participation can bring a positive change!
-          </p>
   
-          <div className="mt-8">
-            <button className="bg-yellow-600 text-white px-6 py-2 rounded-lg mr-4 hover:bg-yellow-700">
-              Become a Volunteer
-            </button>
-            <button className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
-              Donate Now
-            </button>
-          </div>
-        </div>
-      </section>
-    );
-  };
   
   
 const Home = () => {
@@ -190,7 +170,7 @@ const Home = () => {
         <Initiatives></Initiatives>
         <UpcomingEvents></UpcomingEvents>
         <OurImpact></OurImpact>
-        <JoinUs></JoinUs>
+       
     </div>
   )
 }

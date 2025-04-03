@@ -16,6 +16,10 @@ import MyDonations from "../pages/DonorPanel/MyDonations";
 import AvailableEvents from "../pages/VolunteerPanel/AvailableEvents";
 import MyAssignedEvent from "../pages/VolunteerPanel/MyAssignedEvent";
 import Progress from "../pages/VolunteerPanel/Progress";
+import Overview from "../pages/AdminPanel/Overview";
+import EventManagement from "../pages/AdminPanel/EventManagement";
+import EventListUpdate from "../pages/AdminPanel/EventListUpdate";
+import axios from "axios";
 
 
 
@@ -64,11 +68,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path:"/dashboard",
-                element: <h1>dashboard home</h1>
-            },
-            {
-                path:"/dashboard/overview",
-                element: <h1>Overview</h1>
+                element: <Overview></Overview>
             },
             {
                 path:"/dashboard/manageUsers",
@@ -76,8 +76,14 @@ const router = createBrowserRouter([
             },
             {
                 path:"/dashboard/eventMangement",
-                element: <h1>Event Mangement</h1>
+                element:<EventManagement></EventManagement>
             },
+            {
+                path: "/dashboard/update/:id",
+                element: <EventListUpdate />,
+                loader: ({ params }) => axios.get(`http://localhost:3000/event/${params.id}`)
+            },
+            
             {
                 path:"/dashboard/donations",
                 element: <Donations></Donations>

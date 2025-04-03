@@ -15,7 +15,7 @@ const DashboardSideNav = () => {
     {
         role === "Admin" && 
         <>
-            <li><NavLink to={"/dashboard/overview"}>Overview</NavLink></li>
+            <li><NavLink to={"/dashboard"}>Overview</NavLink></li>
             <li><NavLink to={"/dashboard/manageUsers"}>Manage Users</NavLink></li>
             <li><NavLink to={"/dashboard/eventMangement"}>Event Management</NavLink></li>
             <li><NavLink to={"/dashboard/donations"}>Donations</NavLink></li>
