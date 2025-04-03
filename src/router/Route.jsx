@@ -15,6 +15,7 @@ import Donations from "../pages/AdminPanel/Donations";
 import MyDonations from "../pages/DonorPanel/MyDonations";
 import AvailableEvents from "../pages/VolunteerPanel/AvailableEvents";
 import MyAssignedEvent from "../pages/VolunteerPanel/MyAssignedEvent";
+import Progress from "../pages/VolunteerPanel/Progress";
 
 
 
@@ -95,7 +96,7 @@ const router = createBrowserRouter([
             },
             {
                 path:"/dashboard/progressReports",
-                element: <h1>Progress Reports</h1>
+                element: <Progress></Progress>
             },
             {
                 path:"/dashboard/myDonations",
