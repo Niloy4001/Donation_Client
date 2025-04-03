@@ -21,6 +21,7 @@ import EventManagement from "../pages/AdminPanel/EventManagement";
 import EventListUpdate from "../pages/AdminPanel/EventListUpdate";
 import axios from "axios";
 import ManageUsers from "../pages/AdminPanel/ManageUsers";
+import Analytics from "../pages/AdminPanel/Analytics";
 
 
 
@@ -91,7 +92,7 @@ const router = createBrowserRouter([
             },
             {
                 path:"/dashboard/reportAndAnalytics",
-                element: <h1>Report and Analytics</h1>
+                element: <Analytics></Analytics>
             },
             {
                 path:"/dashboard/avaiableEvents",
