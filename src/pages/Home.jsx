@@ -94,12 +94,12 @@ const AboutUsSection = () => {
           </div>
   
           <div className="mt-8">
-            <Link to={"events"}><button className="bg-blue-600 text-white px-6 py-2 rounded-lg mr-4 hover:bg-blue-700">
+            <Link to={"events"}><button className="bg-blue-600 text-white px-6 py-2 rounded-lg mr-4 hover:bg-blue-700 cursor-pointer">
               View All Events
             </button></Link>
-            <button className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
-              Register Now
-            </button>
+            <Link to={"/donate"} className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 cursor-pointer">
+              Donate Now
+            </Link>
           </div>
         </div>
       </section>

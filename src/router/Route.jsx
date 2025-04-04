@@ -1,6 +1,4 @@
-import {
-    createBrowserRouter,
-  } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import DashboardLayout from "../layout/DashboardLayout";
 import Login from "../authentication/Login";
@@ -22,108 +20,162 @@ import EventListUpdate from "../pages/AdminPanel/EventListUpdate";
 import axios from "axios";
 import ManageUsers from "../pages/AdminPanel/ManageUsers";
 import Analytics from "../pages/AdminPanel/Analytics";
-
-
+import DonorPrivateRoute from "./DonorPrivateRoute";
+import VolunteerPrivateRoute from "./VolunteerPrivateRoute";
+import AdminPrivateRoute from "./AdminPrivateRoute";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <MainLayout></MainLayout>,
-      children:[
-        {
-            path:"/",
-            element: <Home></Home>,
-        },
-        {
-            path:"/about",
-            element: <AboutUs></AboutUs>,
-        },
-        {
-            path:"/events",
-            element: <Events></Events>,
-        },
-        {
-            path:"/donate",
-            element: <StripeProvider></StripeProvider>,
-        },
-        {
-            path:"/contact",
-            element: <Contact></Contact>,
-        },
-        {
-            path:"/profile",
-            element: <Profile></Profile>,
-        },
-        {
-            path:"/login",
-            element: <Login></Login>,
-        },
-        {
-            path:"/register",
-            element: <Register></Register>,
-        },
-      ]
-    },
-    {
-        path:"/dashboard",
-        element: <DashboardLayout></DashboardLayout>,
-        children:[
-            {
-                path:"/dashboard",
-                element: <Overview></Overview>
-            },
-            {
-                path:"/dashboard/manageUsers",
-                element: <ManageUsers></ManageUsers>
-            },
-            {
-                path:"/dashboard/eventMangement",
-                element:<EventManagement></EventManagement>
-            },
-            {
-                path: "/dashboard/update/:id",
-                element: <EventListUpdate />,
-                loader: ({ params }) => axios.get(`http://localhost:3000/event/${params.id}`)
-            },
-            
-            {
-                path:"/dashboard/donations",
-                element: <Donations></Donations>
-            },
-            {
-                path:"/dashboard/reportAndAnalytics",
-                element: <Analytics></Analytics>
-            },
-            {
-                path:"/dashboard/avaiableEvents",
-                element: <AvailableEvents></AvailableEvents>
-            },
-            {
-                path:"/dashboard/myAssignedEvents",
-                element: <MyAssignedEvent></MyAssignedEvent>
-            },
-            {
-                path:"/dashboard/progressReports",
-                element: <Progress></Progress>
-            },
-            {
-                path:"/dashboard/myDonations",
-                element: <MyDonations></MyDonations>
-            },
-            {
-                path:"/dashboard/donateNow",
-                element: <StripeProvider></StripeProvider>
-            },
-            {
-                path:"/dashboard/transactionHistory",
-                element:<Donations></Donations>
-            },
-        ]
-    },
-    {
-        path:"*",
-        element: <h1>page Not found</h1>,
-    }
-  ]);
+  {
+    path: "/",
+    element: <MainLayout></MainLayout>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/about",
+        element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/events",
+        element: <Events></Events>,
+      },
+      {
+        path: "/donate",
+        element: <StripeProvider></StripeProvider>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "/profile",
+        element: (
+          <DonorPrivateRoute>
+            <Profile></Profile>
+          </DonorPrivateRoute>
+        ),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout></DashboardLayout>,
+    children: [
+      {
+        path: "/dashboard",
+        element: (
+          <AdminPrivateRoute>
+            <Overview></Overview>,
+          </AdminPrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/manageUsers",
+        element: (
+          <AdminPrivateRoute>
+            <ManageUsers></ManageUsers>,
+          </AdminPrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/eventMangement",
+        element: (
+          <AdminPrivateRoute>
+            <EventManagement></EventManagement>,
+          </AdminPrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/update/:id",
+        element: (
+          <AdminPrivateRoute>
+            <EventListUpdate />
+          </AdminPrivateRoute>
+        ),
+        loader: ({ params }) =>
+          axios.get(`http://localhost:3000/event/${params.id}`),
+      },
 
-  export default router;
+      {
+        path: "/dashboard/donations",
+        element: (
+          <AdminPrivateRoute>
+            <Donations></Donations>,
+          </AdminPrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/reportAndAnalytics",
+        element: (
+          <AdminPrivateRoute>
+            <Analytics></Analytics>,
+          </AdminPrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/avaiableEvents",
+        element: (
+          <VolunteerPrivateRoute>
+            <AvailableEvents></AvailableEvents>
+          </VolunteerPrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/myAssignedEvents",
+        element: (
+          <VolunteerPrivateRoute>
+            <MyAssignedEvent></MyAssignedEvent>,
+          </VolunteerPrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/progressReports",
+        element: (
+          <VolunteerPrivateRoute>
+            <Progress></Progress>,
+          </VolunteerPrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/myDonations",
+        element: (
+          <DonorPrivateRoute>
+            <MyDonations></MyDonations>
+          </DonorPrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/donateNow",
+        element: (
+          <DonorPrivateRoute>
+            <StripeProvider></StripeProvider>,
+          </DonorPrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/transactionHistory",
+        element: (
+          <DonorPrivateRoute>
+            <Donations></Donations>,
+          </DonorPrivateRoute>
+        ),
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <h1>page Not found</h1>,
+  },
+]);
+
+export default router;

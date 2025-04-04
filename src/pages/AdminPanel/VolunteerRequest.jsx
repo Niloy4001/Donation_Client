@@ -40,8 +40,12 @@ const VolunteerRequest = () => {
       {users.length > 0 && (
         <>
           <div className=" mb-8 max-w-2xl">
-            <h1 className="text-4xl font-bold text-gray-800">Donor Request</h1>
-            <p className="text-gray-600 mt-2">Donor Request to be Volunteer </p>
+            <h2 className="text-3xl font-bold text-blue-700 mb-4">
+              Donor Request
+            </h2>
+            <p className="text-gray-700 text-lg mb-8">
+              Donor Request to be Volunteer
+            </p>
           </div>
           <div className="overflow-x-auto rounded-box  w-full bg-white text-black">
             <table className="table">

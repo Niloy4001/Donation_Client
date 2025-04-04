@@ -45,7 +45,7 @@ const EventCompleteReq = () => {
       <section className="bg-blue-100 py-16 px-6">
         {events?.length > 0 && (
           <>
-            <div className="max-w-5xl mx-auto text-center">
+            <div className="max-w-5xl mx-auto ">
               <h2 className="text-3xl font-bold text-blue-700 mb-4">
                 Complete Events Request
               </h2>

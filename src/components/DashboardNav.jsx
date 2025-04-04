@@ -5,10 +5,10 @@ import { AuthContext } from "../context api/AuthProvider";
 const DashboardNav = () => {
   const {user, logOut } = useContext(AuthContext);
   return (
-    <div>
-      <div className="navbar bg-base-100 shadow-sm">
+    <div className="bg-blue-600 text-white">
+      <div className="navbar  shadow-sm">
         <div className="flex-1">
-          <Link to={"/"} className="btn btn-ghost text-xl">
+          <Link to={"/"} className="btn btn-sm  bg-green-600 border-none text-white">
             Go to Home
           </Link>
         </div>
@@ -17,13 +17,13 @@ const DashboardNav = () => {
             {user ? (
               <>
                 <li>
-                  <button onClick={() => logOut()}>Log out</button>
+                  <button className="btn btn-sm  bg-green-600 border-none text-white" onClick={() => logOut()}>Log out</button>
                 </li>
               </>
             ) : (
               <>
                 <li>
-                  <NavLink to={"/login"}>Log In</NavLink>
+                  <Link className="btn btn-sm  bg-green-600 border-none text-white" to={"/login"}>Log In</Link>
                 </li>
               </>
             )}
