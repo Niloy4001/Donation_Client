@@ -103,7 +103,7 @@ const router = createBrowserRouter([
           </AdminPrivateRoute>
         ),
         loader: ({ params }) =>
-          axios.get(`http://localhost:3000/event/${params.id}`),
+          axios.get(`https://donate-murex.vercel.app/event/${params.id}`),
       },
 
       {

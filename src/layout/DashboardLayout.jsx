@@ -3,6 +3,7 @@ import DashboardNav from "../components/DashboardNav";
 import DashboardSideNav from "../components/DashboardSideNav";
 import { Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import { BsArrowRightShort } from "react-icons/bs";
 
 
 const DashboardLayout = () => {
@@ -14,9 +15,9 @@ const DashboardLayout = () => {
           {/* Page content here */}
           <label
             htmlFor="my-drawer-2"
-            className="btn btn-primary drawer-button lg:hidden"
+            className="btn bg-green-600 text-2xl mb-1 text-white drawer-button lg:hidden"
           >
-            Open drawer
+           <BsArrowRightShort />
           </label>
           {/* Drawer content */}
           <div>
