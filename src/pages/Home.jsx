@@ -69,7 +69,7 @@ const AboutUsSection = () => {
   };
   const UpcomingEvents = () => {
     return (
-      <section className="bg-blue-100 py-16 px-6">
+      <section className="bg-white py-16 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-blue-700 mb-4">
             📅 Join Our Upcoming Events!
@@ -93,12 +93,12 @@ const AboutUsSection = () => {
             </div>
           </div>
   
-          <div className="mt-8">
-            <Link to={"events"}><button className="bg-blue-600 text-white px-6 py-2 rounded-lg mr-4 hover:bg-blue-700 cursor-pointer">
+          <div className="mt-8 flex justify-center flex-col md:flex-row gap-4">
+            <Link to={"events"}><button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 cursor-pointer">
               View All Events
             </button></Link>
-            <Link to={"/donate"} className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 cursor-pointer">
-              Donate Now
+            <Link to={"/donate"} >
+             <button className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 cursor-pointer"> Donate Now</button>
             </Link>
           </div>
         </div>

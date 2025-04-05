@@ -15,7 +15,7 @@ const DashboardLayout = () => {
           {/* Page content here */}
           <label
             htmlFor="my-drawer-2"
-            className="btn bg-green-600 text-2xl mb-1 text-white drawer-button lg:hidden"
+            className="btn bg-green-600 text-2xl mb-1 text-white drawer-button lg:hidden sticky top-0 left-0"
           >
            <BsArrowRightShort />
           </label>
@@ -31,7 +31,15 @@ const DashboardLayout = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
+          {/* Cross Button */}
+          <label
+              htmlFor="my-drawer-2"
+              className="absolute right-4 top-1 text-white text-2xl cursor-pointer lg:hidden z-10"
+            >
+              ✕
+            </label>
           <ul className="menu bg-blue-700 text-white min-h-full w-80 p-4">
+            
             {/* Sidebar content here */}
           <DashboardSideNav></DashboardSideNav>
           </ul>

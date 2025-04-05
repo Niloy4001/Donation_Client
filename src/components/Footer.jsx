@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300 py-10">
-      <div className="max-w-5xl mx-auto text-center">
+      <div className="max-w-5xl mx-auto text-center w-[90%] ">
         <h3 className="text-xl font-semibold mb-4">🌿 Green Future Initiative</h3>
         <p className="text-gray-400 mb-6">
           A dedicated environmental organization working towards sustainability and climate action.
