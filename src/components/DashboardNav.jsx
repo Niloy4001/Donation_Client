@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context api/AuthProvider";
 
 const DashboardNav = () => {
   const {user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate()
+  const handleLogout = async()=>{
+    logOut()
+    navigate("/")
+  }
   return (
     <div className="bg-blue-600 text-white">
       <div className="navbar  shadow-sm">
@@ -17,7 +22,7 @@ const DashboardNav = () => {
             {user ? (
               <>
                 <li>
-                  <button className="btn btn-sm  bg-green-600 border-none text-white" onClick={() => logOut()}>Log out</button>
+                  <button className="btn btn-sm  bg-green-600 border-none text-white" onClick={() => handleLogout()}>Log out</button>
                 </li>
               </>
             ) : (

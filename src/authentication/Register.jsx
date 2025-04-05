@@ -45,7 +45,7 @@ const Register = () => {
     setErrorMessage("");
     try {
       await logInByGoogle();
-      navigate("/");
+      navigate("/")
       notifySuccess();
     } catch (err) {
       setErrorMessage(err.message);
@@ -66,7 +66,7 @@ const Register = () => {
     try {
       await signInByEmailPassword(email, password);
       await manageProfile(name, photo);
-      navigate("/");
+      navigate("/")
       notifySuccess();
       e.target.reset();
     } catch (error) {
@@ -111,7 +111,7 @@ const Register = () => {
                 className="input w-full input-bordered border-green-600"
                 required
               />
-              <span onClick={() => setEye(!eye)} className="absolute top-[52px] right-[8px] cursor-pointer text-blue-600">
+              <span onClick={() => setEye(!eye)} className="absolute top-[35px] right-[8px] cursor-pointer text-blue-600">
                 {eye ? <HiOutlineEyeOff /> : <RiEyeLine />}
               </span>
             </div>

@@ -58,15 +58,15 @@ const Login = () => {
               <label className="label block">
                 <span className="label-text block text-green-600">Email</span>
               </label>
-              <input ref={emailRef} type="email" placeholder="email" className="input input-bordered border-green-600 focus:border-blue-600" required />
+              <input ref={emailRef} type="email" placeholder="email" className="input w-full input-bordered border-green-600 focus:border-blue-600" required />
             </div>
 
             <div className="form-control relative">
               <label className="label block">
                 <span className="label-text block text-green-600">Password</span>
               </label>
-              <input ref={passwordRef} type={eye ? "text" : "password"} placeholder="password" className="input input-bordered border-green-600 focus:border-blue-600" required />
-              <span onClick={() => setEye(!eye)} className="absolute top-[52px] right-[8px] cursor-pointer text-blue-600">
+              <input ref={passwordRef} type={eye ? "text" : "password"} placeholder="password" className="input w-full input-bordered border-green-600 focus:border-blue-600" required />
+              <span onClick={() => setEye(!eye)} className="absolute top-[35px] right-[8px] cursor-pointer text-blue-600">
                 {eye ? <HiOutlineEyeOff /> : <RiEyeLine />}
               </span>
             </div>
@@ -109,20 +109,20 @@ const Login = () => {
             <h2 className="text-xl font-bold mb-4 text-center text-green-600">Demo Credentials</h2>
 
             <div className="mt-4">
-              <h3 className="font-semibold">👤 User Credential:</h3>
-              <p>Email: <span className="font-mono">user11@gmail.com</span></p>
-              <p>Password: <span className="font-mono">User12345</span></p>
+              <h3 className="font-semibold">👤 Donor Credential:</h3>
+              <p>Email: <span className="font-mono">donor4@gmail.com</span></p>
+              <p>Password: <span className="font-mono">Donor123</span></p>
             </div>
 
             <div className="mt-4">
-              <h3 className="font-semibold">👤 Member Credential:</h3>
-              <p>Email: <span className="font-mono">member22@gmail.com</span></p>
-              <p>Password: <span className="font-mono">Member22</span></p>
+              <h3 className="font-semibold">👤Volunteer Credential:</h3>
+              <p>Email: <span className="font-mono">donor2@gmail.com</span></p>
+              <p>Password: <span className="font-mono">Donor123</span></p>
             </div>
 
             <div className="mt-4">
               <h3 className="font-semibold">👤 Admin Credential:</h3>
-              <p>Email: <span className="font-mono">admin1@gmail.com</span></p>
+              <p>Email: <span className="font-mono">admin300@gmail.com</span></p>
               <p>Password: <span className="font-mono">Admin12345</span></p>
             </div>
 

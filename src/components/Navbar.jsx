@@ -24,44 +24,16 @@ const Navbar = () => {
       <li>
         <NavLink to={"/contact"}>Contact</NavLink>
       </li>
-      {role == "Donor" && (
-        <li>
-          <NavLink to={"/dashboard/myDonations"}>Dashboard</NavLink>
-        </li>
-      )}
-      {role == "Volunteer" && (
-        <li>
-          <NavLink to={"/dashboard/avaiableEvents"}>Dashboard</NavLink>
-        </li>
-      )}
-      {role == "Admin" && (
-        <li>
-          <NavLink to={"/dashboard"}>Dashboard</NavLink>
-        </li>
-      )}
       {user && (
         <>
+          <li>
+            <NavLink to={`${role == "Donor" && "/dashboard/myDonations" || role == "Volunteer" && "/dashboard/avaiableEvents" || role == "Admin" && "/dashboard/overview"}`}>Dashboard</NavLink>
+          </li>
           <li>
             <NavLink to={"/profile"}>My Profile</NavLink>
           </li>
         </>
       )}
-      {/* {user ? (
-        <>
-          <li>
-            <button onClick={() => logOut()}>Log out</button>
-          </li>
-        </>
-      ) : (
-        <>
-          <li>
-            <NavLink to={"/register"}>Register</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/login"}>Log In</NavLink>
-          </li>
-        </>
-      )} */}
     </>
   );
 
